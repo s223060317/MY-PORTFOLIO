@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diona Dominic - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ff6b6b; 
+            font-family: Arial, sans-serif;
+            color: #333; 
+        }
+
+        header {
+            background-color: #6b5b95; 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #feb236; 
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        section {
+            background-color: #ffffff; 
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Add styles for headings and paragraphs */
+        h2 {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #6b5b95; 
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333; 
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #2a9d8f; 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+   
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="app">
+        <header>
+            <h1>Diona Dominic</h1>
+            <p>Bachelor of Information Technology</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><router-link to="/about"><i class="fas fa-user"></i> About</router-link></li>
+                <li><router-link to="/experience"><i class="fas fa-briefcase"></i> Experience</router-link></li>
+                <li><router-link to="/education"><i class="fas fa-graduation-cap"></i> Education</router-link></li>
+                <li><router-link to="/skills"><i class="fas fa-code"></i> Skills</router-link></li>
+                <li><router-link to="/contact"><i class="fas fa-envelope"></i> Contact</router-link></li>
+            </ul>
+        </nav>
+
+        <router-view></router-view>
+
+        <footer>
+            <p>&copy; 2023 Diona Dominic</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.3/dist/vue-router.js"></script>
+    <script>
+        // Vue components and router configuration go here
+        const About = {
+            template: `
+                <section>
+                    <h2>About Me</h2>
+                    <p> I am Diona Dominic, currently in pursuit of a Bachelor of Information Technology at Deakin University. My unwavering ambition is to emerge as a proficient software developer, armed with a passion for crafting innovative solutions in the digital realm. My journey in the world of academia has been marked by dedication and diligence, as evidenced by my stellar academic performance, where I achieved an impressive 96.25 percent during my secondary education. This exceptional result not only solidified my commitment to pursuing a career in IT but also ignited my curiosity to explore the endless possibilities that technology offers. With every line of code I write, I am driven by the desire to make a meaningful impact in the tech industry, solving complex problems and creating user-friendly applications. My journey as a student has been one of continuous growth and learning, and I am eagerly looking forward to the challenges and opportunities that lie ahead as I work towards realizing my dream of becoming a software developer.
+                </section>
+            `
+        };
+
+        const Experience = {
+            template: `
+                <section>
+                    <h2>Experience</h2>
+                    <p> Engaging in diverse projects has profoundly enriched my understanding of web development. Crafting HTML pages allowed me to master integrating tags like images, tables, and forms, each serving unique functions. Delving into CSS, from inline to external methods, honed my skills in effective styling, enhancing layout aesthetics. Git and GitHub usage demystified version control, stressing structured repositories and collaborative workflows. Embracing responsive web design illuminated its vital role in user-friendly websites across devices, emphasizing its impact on user experience and cost-effective development. Exploring JavaScript concepts reinforced its versatility, unveiling powerful data manipulation techniques. These experiences deepened my grasp of essential web development, setting the stage for advanced explorations in the field
+                </section>
+            `
+        };
+
+        const Education = {
+            template: `
+                <section>
+                    <h2>Education</h2>
+                    <li> Deakin University, Waurn Ponds | MARCH 2023-PRESENT
+                        Bachelor of Information Technology </li>
+
+                    <li>St. Augustine's C.G.H.S.S, Kothamangalam | JUNE 2021– MARCH 2022
+                       (Board of Higher Secondary Examination, Government of Kerala)
+                      - Secured 96.25% marks in class 12 board examination </li>
+
+                    <li>  Sobhana Public School, Kothamangalam |JUNE 2019– MARCH 2020
+                      (Central Board of Secondary Education)
+                      - Achieved 85% marks in class 10 board examination</li>
+                </section>
+            `
+        };
+
+        const Skills = {
+            template: `
+                <section>
+                    <h2>Skills</h2>
+                    <li>User-Centered Design
+                   - Proficient in creating visually appealing, user-friendly digital interfaces using principles of user-centered design to enhance engagement.
+                   </li>
+                   <li> Programming Languages
+                   - Skilled in C++, Java, HTML, MySQL, and Python, enabling development of dynamic, interactive applications with optimal functionality.
+                   </li>
+                   <li> Problem Solving
+                   - Demonstrated ability to innovate solutions, utilizing technical knowledge and creativity to overcome challenges and achieve project goals.
+                   </li>
+                   <li>Team Collaboration
+-                   Strong teamwork and communication skills developed through collaborative projects, contributing to high-quality outcomes.
+                   </li>
+                  </section>
+            `
+        };
+
+        const Contact = {
+            
+            data() {
+                return {
+                    email: "",
+                    message: ""
+                };
+            },
+            template: `
+                <section>
+                    <h2>Contact Me</h2>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" v-model="email" placeholder="Your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" v-model="message" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <button @click="sendMessage">Send Message</button>
+                </section>
+            `,
+            methods: {
+                sendMessage() {
+                    // Handle sending the message (e.g., using an API)
+                    alert("Message sent!");
+                }
+            }
+        };            
+
+        const routes = [
+            { path: '/about', component: About },
+            { path: '/experience', component: Experience },
+            { path: '/education', component: Education },
+            { path: '/skills', component: Skills },
+            { path: '/contact', component: Contact }
+        ];
+
+        const router = new VueRouter({
+            routes
+        });
+
+        const app = new Vue({
+            el: '#app',
+            router
+        });
+    </script>
+</body>
+</html>
