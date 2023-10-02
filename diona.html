@@ -85,9 +85,26 @@
             text-align: center;
             padding: 20px 0;
         }
+   
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
     </style>
 </head>
-<body>
+<body> 
     <div id="app">
         <header>
             <h1>Diona Dominic</h1>
@@ -172,19 +189,35 @@
         };
 
         const Contact = {
+            
+            data() {
+                return {
+                    email: "",
+                    message: ""
+                };
+            },
             template: `
                 <section>
                     <h2>Contact Me</h2>
-                    <li> Email: s223060317@deakin.edu.au</li>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" v-model="email" placeholder="Your email">
+                    </div>
 
-                    <li>   LinkedIn: https://www.linkedin.com/in/diona-dominic-76743724a</li>
-
-                    <li>    Phone: +614116120 </li>
-
-                    <li>    Location: Highton, VIC 3216</li>
-               </section>
-            `
-        };
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" v-model="message" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <button @click="sendMessage">Send Message</button>
+                </section>
+            `,
+            methods: {
+                sendMessage() {
+                    // Handle sending the message (e.g., using an API)
+                    alert("Message sent!");
+                }
+            }
+        };            
 
         const routes = [
             { path: '/about', component: About },
